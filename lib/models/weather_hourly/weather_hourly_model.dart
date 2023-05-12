@@ -9,7 +9,7 @@ class WeatherHourlyModel with _$WeatherHourlyModel {
   factory WeatherHourlyModel(
       {required List<String>? time,
       @JsonKey(name: 'temperature_2m')
-          required List<String>? temperature2M,
+          required List<double>? temperature2M,
       @JsonKey(name: 'relativehumidity_2m')
           required List<int>? relativehumidity2M,
       @JsonKey(name: 'winddirection_10m')

@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'theme_config.dart';
 
-final style = GoogleFonts.getFont(ThemeConfig.appMaineFontFamily);
+final style = GoogleFonts.getFont(ThemeConfig.appMaineFontFamily,
+    textStyle: const TextStyle(color: ThemeConfig.darkColor, fontSize: 14));
 
 ThemeData lightTheme = ThemeData.light().copyWith(
   textTheme: ThemeData.light().textTheme.copyWith(

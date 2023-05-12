@@ -28,9 +28,12 @@ class WeatherNowWidget extends StatelessWidget {
         ),
         Text(
           '${degree.round()}',
+          style:
+              Theme.of(context).textTheme.displayLarge!.copyWith(fontSize: 80),
         ),
         Text(
           TextWeatherStatus().getText(weather),
+          style: Theme.of(context).textTheme.titleLarge!.copyWith(fontSize: 16),
         ),
         const SizedBox(height: 5),
         Text(

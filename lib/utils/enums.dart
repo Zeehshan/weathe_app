@@ -27,3 +27,9 @@ enum WeatherDataHourlyType {
 //// weather data daily type
 
 enum WeatherDataDailyType { fahrenheit, unKnown }
+
+enum Degreetype { celsius, fahrenheit }
+
+enum SystemMeasuremenType { metric, imperial }
+
+enum TimeFormat { half, full }

@@ -11,7 +11,7 @@ _$_WeatherHourlyModel _$$_WeatherHourlyModelFromJson(
     _$_WeatherHourlyModel(
       time: (json['time'] as List<dynamic>?)?.map((e) => e as String).toList(),
       temperature2M: (json['temperature_2m'] as List<dynamic>?)
-          ?.map((e) => e as String)
+          ?.map((e) => (e as num).toDouble())
           .toList(),
       relativehumidity2M: (json['relativehumidity_2m'] as List<dynamic>?)
           ?.map((e) => e as int)

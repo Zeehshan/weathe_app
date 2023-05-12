@@ -3,9 +3,9 @@
  * Generated file. Do not edit.
  *
  * Locales: 1
- * Strings: 1 
+ * Strings: 93 
  *
- * Built on 2023-05-11 at 10:19 UTC
+ * Built on 2023-05-12 at 19:06 UTC
  */
 
 import 'package:flutter/widgets.dart';
@@ -302,6 +302,98 @@ class _TranslationsEn {
 
 	// Translations
 	String get APP_NAME => 'Weather';
+	String get start => 'Get Started';
+	String get description => 'Weather app that provides real-time forecasts, and hourly, daily and weekly forecasts for any location.';
+	String get name => 'Weather';
+	String get search => 'Search...';
+	String get loading => 'Loading...';
+	String get searchCity => 'Find your city';
+	String get humidity => 'Humidity';
+	String get wind => 'Wind';
+	String get visibility => 'Visibility';
+	String get feels => 'Feels';
+	String get evaporation => 'Evapotranspiration';
+	String get precipitation => 'Precipitation';
+	String get direction => 'Direction';
+	String get pressure => 'Pressure';
+	String get rain => 'Rain';
+	String get clear_sky => 'Clear sky';
+	String get cloudy => 'Cloudy';
+	String get overcast => 'Overcast';
+	String get fog => 'Fog';
+	String get drizzle => 'Drizzle';
+	String get drizzling_rain => 'Freezing Drizzle';
+	String get freezing_rain => 'Freezing Rain';
+	String get heavy_rains => 'Rain showers';
+	String get snow => 'Snow';
+	String get thunderstorm => 'Thunderstorm';
+	String get kph => 'km/h';
+	String get mph => 'mph';
+	String get mi => 'mi';
+	String get km => 'km';
+	String get inch => 'inch';
+	String get mm => 'mm';
+	String get hPa => 'hPa';
+	String get settings => 'Set.';
+	String get no_inter => 'No Internet';
+	String get on_inter => 'Turn on the Internet to get meteorological data.';
+	String get location => 'Location';
+	String get no_location => 'Enable the location service to get weather data for the current location.';
+	String get theme => 'Dark theme';
+	String get low => 'Low';
+	String get high => 'High';
+	String get normal => 'Normal';
+	String get lat => 'Latitude';
+	String get lon => 'Longitude';
+	String get create => 'Create';
+	String get city => 'City';
+	String get district => 'District';
+	String get noWeatherCard => 'Add a city';
+	String get deletedCardWeather => 'Deleting a city';
+	String get deletedCardWeatherQuery => 'Are you sure you want to delete the city?';
+	String get delete => 'Delete';
+	String get cancel => 'Cancel';
+	String get time => 'Time in the city';
+	String get validateName => 'Please enter the name';
+	String get measurements => 'System of measures';
+	String get degrees => 'Degrees';
+	String get celsius => 'Celsius';
+	String get fahrenheit => 'Fahrenheit';
+	String get imperial => 'Imperial';
+	String get metric => 'Metric';
+	String get validateValue => 'Please enter a value';
+	String get validateNumber => 'Please enter a valid number';
+	String get validate90 => 'Value must be between -90 and 90';
+	String get validate180 => 'Value must be between -180 and 180';
+	String get notifications => 'Notifications';
+	String get sunrise => 'Sunrisex';
+	String get sunset => 'Sunset';
+	String get timeformat => 'Time format';
+	String get halfHours => '12-hour';
+	String get fullHours => '24-hour';
+	String get cloudcover => 'Сloudcover';
+	String get uvIndex => 'UV-index';
+	String get materialColor => 'Use system color (Android 12+)';
+	String get uvLow => 'Low';
+	String get uvAverage => 'Moderate';
+	String get uvHigh => 'High';
+	String get uvVeryHigh => 'Very high';
+	String get uvExtreme => 'Extreme';
+	String get weatherMore => '10-day weather forecast';
+	String get windgusts => 'Gust';
+	String get north => 'North';
+	String get northeast => 'Northeast';
+	String get east => 'East';
+	String get southeast => 'Southeast';
+	String get south => 'South';
+	String get southwest => 'Southwest';
+	String get west => 'West';
+	String get northwest => 'Northwest';
+	String get project => 'Project on';
+	String get version => 'Application version';
+	String get precipitationProbabilit => 'Precipitation probability';
+	String get apparentTemperatureMin => 'Minimum apparent temperature';
+	String get apparentTemperatureMax => 'Maximum apparent temperature';
 }
 
 /// Flat map(s) containing all translations.
@@ -311,6 +403,98 @@ extension on _TranslationsEn {
 	Map<String, dynamic> _buildFlatMap() {
 		return <String, dynamic>{
 			'APP_NAME': 'Weather',
+			'start': 'Get Started',
+			'description': 'Weather app that provides real-time forecasts, and hourly, daily and weekly forecasts for any location.',
+			'name': 'Weather',
+			'search': 'Search...',
+			'loading': 'Loading...',
+			'searchCity': 'Find your city',
+			'humidity': 'Humidity',
+			'wind': 'Wind',
+			'visibility': 'Visibility',
+			'feels': 'Feels',
+			'evaporation': 'Evapotranspiration',
+			'precipitation': 'Precipitation',
+			'direction': 'Direction',
+			'pressure': 'Pressure',
+			'rain': 'Rain',
+			'clear_sky': 'Clear sky',
+			'cloudy': 'Cloudy',
+			'overcast': 'Overcast',
+			'fog': 'Fog',
+			'drizzle': 'Drizzle',
+			'drizzling_rain': 'Freezing Drizzle',
+			'freezing_rain': 'Freezing Rain',
+			'heavy_rains': 'Rain showers',
+			'snow': 'Snow',
+			'thunderstorm': 'Thunderstorm',
+			'kph': 'km/h',
+			'mph': 'mph',
+			'mi': 'mi',
+			'km': 'km',
+			'inch': 'inch',
+			'mm': 'mm',
+			'hPa': 'hPa',
+			'settings': 'Set.',
+			'no_inter': 'No Internet',
+			'on_inter': 'Turn on the Internet to get meteorological data.',
+			'location': 'Location',
+			'no_location': 'Enable the location service to get weather data for the current location.',
+			'theme': 'Dark theme',
+			'low': 'Low',
+			'high': 'High',
+			'normal': 'Normal',
+			'lat': 'Latitude',
+			'lon': 'Longitude',
+			'create': 'Create',
+			'city': 'City',
+			'district': 'District',
+			'noWeatherCard': 'Add a city',
+			'deletedCardWeather': 'Deleting a city',
+			'deletedCardWeatherQuery': 'Are you sure you want to delete the city?',
+			'delete': 'Delete',
+			'cancel': 'Cancel',
+			'time': 'Time in the city',
+			'validateName': 'Please enter the name',
+			'measurements': 'System of measures',
+			'degrees': 'Degrees',
+			'celsius': 'Celsius',
+			'fahrenheit': 'Fahrenheit',
+			'imperial': 'Imperial',
+			'metric': 'Metric',
+			'validateValue': 'Please enter a value',
+			'validateNumber': 'Please enter a valid number',
+			'validate90': 'Value must be between -90 and 90',
+			'validate180': 'Value must be between -180 and 180',
+			'notifications': 'Notifications',
+			'sunrise': 'Sunrisex',
+			'sunset': 'Sunset',
+			'timeformat': 'Time format',
+			'halfHours': '12-hour',
+			'fullHours': '24-hour',
+			'cloudcover': 'Сloudcover',
+			'uvIndex': 'UV-index',
+			'materialColor': 'Use system color (Android 12+)',
+			'uvLow': 'Low',
+			'uvAverage': 'Moderate',
+			'uvHigh': 'High',
+			'uvVeryHigh': 'Very high',
+			'uvExtreme': 'Extreme',
+			'weatherMore': '10-day weather forecast',
+			'windgusts': 'Gust',
+			'north': 'North',
+			'northeast': 'Northeast',
+			'east': 'East',
+			'southeast': 'Southeast',
+			'south': 'South',
+			'southwest': 'Southwest',
+			'west': 'West',
+			'northwest': 'Northwest',
+			'project': 'Project on',
+			'version': 'Application version',
+			'precipitationProbabilit': 'Precipitation probability',
+			'apparentTemperatureMin': 'Minimum apparent temperature',
+			'apparentTemperatureMax': 'Maximum apparent temperature',
 		};
 	}
 }

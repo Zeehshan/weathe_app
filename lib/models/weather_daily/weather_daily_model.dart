@@ -1,7 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../models.dart';
-
 part 'weather_daily_model.g.dart';
 part 'weather_daily_model.freezed.dart';
 

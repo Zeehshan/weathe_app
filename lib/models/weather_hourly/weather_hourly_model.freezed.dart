@@ -22,7 +22,7 @@ WeatherHourlyModel _$WeatherHourlyModelFromJson(Map<String, dynamic> json) {
 mixin _$WeatherHourlyModel {
   List<String>? get time => throw _privateConstructorUsedError;
   @JsonKey(name: 'temperature_2m')
-  List<String>? get temperature2M => throw _privateConstructorUsedError;
+  List<double>? get temperature2M => throw _privateConstructorUsedError;
   @JsonKey(name: 'relativehumidity_2m')
   List<int>? get relativehumidity2M => throw _privateConstructorUsedError;
   @JsonKey(name: 'winddirection_10m')
@@ -55,7 +55,7 @@ abstract class $WeatherHourlyModelCopyWith<$Res> {
   @useResult
   $Res call(
       {List<String>? time,
-      @JsonKey(name: 'temperature_2m') List<String>? temperature2M,
+      @JsonKey(name: 'temperature_2m') List<double>? temperature2M,
       @JsonKey(name: 'relativehumidity_2m') List<int>? relativehumidity2M,
       @JsonKey(name: 'winddirection_10m') List<int>? winddirection10M,
       @JsonKey(name: 'windgusts_10m') List<double>? windgusts10M,
@@ -108,7 +108,7 @@ class _$WeatherHourlyModelCopyWithImpl<$Res, $Val extends WeatherHourlyModel>
       temperature2M: freezed == temperature2M
           ? _value.temperature2M
           : temperature2M // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
+              as List<double>?,
       relativehumidity2M: freezed == relativehumidity2M
           ? _value.relativehumidity2M
           : relativehumidity2M // ignore: cast_nullable_to_non_nullable
@@ -175,7 +175,7 @@ abstract class _$$_WeatherHourlyModelCopyWith<$Res>
   @useResult
   $Res call(
       {List<String>? time,
-      @JsonKey(name: 'temperature_2m') List<String>? temperature2M,
+      @JsonKey(name: 'temperature_2m') List<double>? temperature2M,
       @JsonKey(name: 'relativehumidity_2m') List<int>? relativehumidity2M,
       @JsonKey(name: 'winddirection_10m') List<int>? winddirection10M,
       @JsonKey(name: 'windgusts_10m') List<double>? windgusts10M,
@@ -226,7 +226,7 @@ class __$$_WeatherHourlyModelCopyWithImpl<$Res>
       temperature2M: freezed == temperature2M
           ? _value._temperature2M
           : temperature2M // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
+              as List<double>?,
       relativehumidity2M: freezed == relativehumidity2M
           ? _value._relativehumidity2M
           : relativehumidity2M // ignore: cast_nullable_to_non_nullable
@@ -290,7 +290,7 @@ class _$_WeatherHourlyModel implements _WeatherHourlyModel {
   _$_WeatherHourlyModel(
       {required final List<String>? time,
       @JsonKey(name: 'temperature_2m')
-          required final List<String>? temperature2M,
+          required final List<double>? temperature2M,
       @JsonKey(name: 'relativehumidity_2m')
           required final List<int>? relativehumidity2M,
       @JsonKey(name: 'winddirection_10m')
@@ -337,10 +337,10 @@ class _$_WeatherHourlyModel implements _WeatherHourlyModel {
     return EqualUnmodifiableListView(value);
   }
 
-  final List<String>? _temperature2M;
+  final List<double>? _temperature2M;
   @override
   @JsonKey(name: 'temperature_2m')
-  List<String>? get temperature2M {
+  List<double>? get temperature2M {
     final value = _temperature2M;
     if (value == null) return null;
     if (_temperature2M is EqualUnmodifiableListView) return _temperature2M;
@@ -564,7 +564,7 @@ abstract class _WeatherHourlyModel implements WeatherHourlyModel {
   factory _WeatherHourlyModel(
       {required final List<String>? time,
       @JsonKey(name: 'temperature_2m')
-          required final List<String>? temperature2M,
+          required final List<double>? temperature2M,
       @JsonKey(name: 'relativehumidity_2m')
           required final List<int>? relativehumidity2M,
       @JsonKey(name: 'winddirection_10m')
@@ -590,7 +590,7 @@ abstract class _WeatherHourlyModel implements WeatherHourlyModel {
   List<String>? get time;
   @override
   @JsonKey(name: 'temperature_2m')
-  List<String>? get temperature2M;
+  List<double>? get temperature2M;
   @override
   @JsonKey(name: 'relativehumidity_2m')
   List<int>? get relativehumidity2M;
