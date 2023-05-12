@@ -27,7 +27,8 @@ class _ApplicationState extends State<Application> {
                 ..add(const WeatherCurrentDayLocationLoaded()),
         ),
         BlocProvider(
-          create: (cotextg) => LocationWeatherBloc(),
+          create: (cotextg) =>
+              LocationWeatherBloc(weatherRepository: WeatherRepository()),
         ),
         BlocProvider(
           create: (cotextg) => SettingBloc(),

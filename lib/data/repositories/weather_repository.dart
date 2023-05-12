@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 
 import '../../models/models.dart';
@@ -36,6 +37,14 @@ class WeatherRepository {
   Future<Position> getCurrentPosition() async {
     try {
       return await weatherApiProvider.getCurrentPosition();
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  Future<List<CityModel>> searchLocation(String query, Locale? locale) async {
+    try {
+      return await weatherApiProvider.searchLocation(query, locale);
     } catch (e) {
       rethrow;
     }

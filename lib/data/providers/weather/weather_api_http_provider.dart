@@ -1,6 +1,6 @@
-import 'package:geolocator/geolocator.dart';
-import 'package:geolocator_platform_interface/src/models/position.dart';
+import 'dart:ui';
 
+import 'package:geolocator/geolocator.dart';
 import '../../../configs/apis/apis.dart';
 import '../../../models/models.dart';
 import '../../../utils/utils.dart';
@@ -95,6 +95,26 @@ class WeatherApiHttpProvider extends BaseApiProvider
       }
       return await Geolocator.getCurrentPosition(
           desiredAccuracy: LocationAccuracy.high);
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  @override
+  Future<List<CityModel>> searchLocation(String query, Locale? locale) async {
+    try {
+      final path = WeatherApis.searchLocation
+          .replaceAll('{query}', query)
+          .replaceAll('{languageCode}', locale?.languageCode.toString() ?? '');
+      final response = await backendApiReq.get(path);
+      if (response.statusCode == 200) {
+        List<CityModel> list = (response.data['results'] as List<dynamic>)
+            .map((json) => CityModel.fromJson(json))
+            .toList();
+        return list;
+      } else {
+        throw Exception('Failed to load suggestions');
+      }
     } catch (e) {
       rethrow;
     }

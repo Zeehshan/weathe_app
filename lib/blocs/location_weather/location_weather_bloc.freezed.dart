@@ -18,58 +18,64 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$LocationWeatherEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String query) locationSearched,
+    required TResult Function(String query, Locale? locale) locationSearched,
     required TResult Function(
             double? latitude, double? longitude, WeatherDataDailyType? type)
         dailyLoaded,
     required TResult Function(
             double? latitude, double? longitude, WeatherDataHourlyType? type)
         hourlyLoaded,
+    required TResult Function(int dayOfNow, int hourOfDay) dayHourChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String query)? locationSearched,
+    TResult? Function(String query, Locale? locale)? locationSearched,
     TResult? Function(
             double? latitude, double? longitude, WeatherDataDailyType? type)?
         dailyLoaded,
     TResult? Function(
             double? latitude, double? longitude, WeatherDataHourlyType? type)?
         hourlyLoaded,
+    TResult? Function(int dayOfNow, int hourOfDay)? dayHourChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String query)? locationSearched,
+    TResult Function(String query, Locale? locale)? locationSearched,
     TResult Function(
             double? latitude, double? longitude, WeatherDataDailyType? type)?
         dailyLoaded,
     TResult Function(
             double? latitude, double? longitude, WeatherDataHourlyType? type)?
         hourlyLoaded,
+    TResult Function(int dayOfNow, int hourOfDay)? dayHourChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(WeatherDatalocationSearched value)
-        locationSearched,
-    required TResult Function(WeatherDataDailyLoaded value) dailyLoaded,
-    required TResult Function(WeatherDataHourlyLoaded value) hourlyLoaded,
+    required TResult Function(LocationWeatherSearched value) locationSearched,
+    required TResult Function(LocationWeatherDailyLoaded value) dailyLoaded,
+    required TResult Function(LocationWeatherHourlyLoaded value) hourlyLoaded,
+    required TResult Function(LocationWeatherDayHourChanged value)
+        dayHourChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(WeatherDatalocationSearched value)? locationSearched,
-    TResult? Function(WeatherDataDailyLoaded value)? dailyLoaded,
-    TResult? Function(WeatherDataHourlyLoaded value)? hourlyLoaded,
+    TResult? Function(LocationWeatherSearched value)? locationSearched,
+    TResult? Function(LocationWeatherDailyLoaded value)? dailyLoaded,
+    TResult? Function(LocationWeatherHourlyLoaded value)? hourlyLoaded,
+    TResult? Function(LocationWeatherDayHourChanged value)? dayHourChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(WeatherDatalocationSearched value)? locationSearched,
-    TResult Function(WeatherDataDailyLoaded value)? dailyLoaded,
-    TResult Function(WeatherDataHourlyLoaded value)? hourlyLoaded,
+    TResult Function(LocationWeatherSearched value)? locationSearched,
+    TResult Function(LocationWeatherDailyLoaded value)? dailyLoaded,
+    TResult Function(LocationWeatherHourlyLoaded value)? hourlyLoaded,
+    TResult Function(LocationWeatherDayHourChanged value)? dayHourChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -95,112 +101,120 @@ class _$LocationWeatherEventCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$WeatherDatalocationSearchedCopyWith<$Res> {
-  factory _$$WeatherDatalocationSearchedCopyWith(
-          _$WeatherDatalocationSearched value,
-          $Res Function(_$WeatherDatalocationSearched) then) =
-      __$$WeatherDatalocationSearchedCopyWithImpl<$Res>;
+abstract class _$$LocationWeatherSearchedCopyWith<$Res> {
+  factory _$$LocationWeatherSearchedCopyWith(_$LocationWeatherSearched value,
+          $Res Function(_$LocationWeatherSearched) then) =
+      __$$LocationWeatherSearchedCopyWithImpl<$Res>;
   @useResult
-  $Res call({String query});
+  $Res call({String query, Locale? locale});
 }
 
 /// @nodoc
-class __$$WeatherDatalocationSearchedCopyWithImpl<$Res>
-    extends _$LocationWeatherEventCopyWithImpl<$Res,
-        _$WeatherDatalocationSearched>
-    implements _$$WeatherDatalocationSearchedCopyWith<$Res> {
-  __$$WeatherDatalocationSearchedCopyWithImpl(
-      _$WeatherDatalocationSearched _value,
-      $Res Function(_$WeatherDatalocationSearched) _then)
+class __$$LocationWeatherSearchedCopyWithImpl<$Res>
+    extends _$LocationWeatherEventCopyWithImpl<$Res, _$LocationWeatherSearched>
+    implements _$$LocationWeatherSearchedCopyWith<$Res> {
+  __$$LocationWeatherSearchedCopyWithImpl(_$LocationWeatherSearched _value,
+      $Res Function(_$LocationWeatherSearched) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? query = null,
+    Object? locale = freezed,
   }) {
-    return _then(_$WeatherDatalocationSearched(
+    return _then(_$LocationWeatherSearched(
       query: null == query
           ? _value.query
           : query // ignore: cast_nullable_to_non_nullable
               as String,
+      locale: freezed == locale
+          ? _value.locale
+          : locale // ignore: cast_nullable_to_non_nullable
+              as Locale?,
     ));
   }
 }
 
 /// @nodoc
 
-class _$WeatherDatalocationSearched implements WeatherDatalocationSearched {
-  const _$WeatherDatalocationSearched({required this.query});
+class _$LocationWeatherSearched implements LocationWeatherSearched {
+  const _$LocationWeatherSearched({required this.query, required this.locale});
 
   @override
   final String query;
+  @override
+  final Locale? locale;
 
   @override
   String toString() {
-    return 'LocationWeatherEvent.locationSearched(query: $query)';
+    return 'LocationWeatherEvent.locationSearched(query: $query, locale: $locale)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$WeatherDatalocationSearched &&
-            (identical(other.query, query) || other.query == query));
+            other is _$LocationWeatherSearched &&
+            (identical(other.query, query) || other.query == query) &&
+            (identical(other.locale, locale) || other.locale == locale));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, query);
+  int get hashCode => Object.hash(runtimeType, query, locale);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$WeatherDatalocationSearchedCopyWith<_$WeatherDatalocationSearched>
-      get copyWith => __$$WeatherDatalocationSearchedCopyWithImpl<
-          _$WeatherDatalocationSearched>(this, _$identity);
+  _$$LocationWeatherSearchedCopyWith<_$LocationWeatherSearched> get copyWith =>
+      __$$LocationWeatherSearchedCopyWithImpl<_$LocationWeatherSearched>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String query) locationSearched,
+    required TResult Function(String query, Locale? locale) locationSearched,
     required TResult Function(
             double? latitude, double? longitude, WeatherDataDailyType? type)
         dailyLoaded,
     required TResult Function(
             double? latitude, double? longitude, WeatherDataHourlyType? type)
         hourlyLoaded,
+    required TResult Function(int dayOfNow, int hourOfDay) dayHourChanged,
   }) {
-    return locationSearched(query);
+    return locationSearched(query, locale);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String query)? locationSearched,
+    TResult? Function(String query, Locale? locale)? locationSearched,
     TResult? Function(
             double? latitude, double? longitude, WeatherDataDailyType? type)?
         dailyLoaded,
     TResult? Function(
             double? latitude, double? longitude, WeatherDataHourlyType? type)?
         hourlyLoaded,
+    TResult? Function(int dayOfNow, int hourOfDay)? dayHourChanged,
   }) {
-    return locationSearched?.call(query);
+    return locationSearched?.call(query, locale);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String query)? locationSearched,
+    TResult Function(String query, Locale? locale)? locationSearched,
     TResult Function(
             double? latitude, double? longitude, WeatherDataDailyType? type)?
         dailyLoaded,
     TResult Function(
             double? latitude, double? longitude, WeatherDataHourlyType? type)?
         hourlyLoaded,
+    TResult Function(int dayOfNow, int hourOfDay)? dayHourChanged,
     required TResult orElse(),
   }) {
     if (locationSearched != null) {
-      return locationSearched(query);
+      return locationSearched(query, locale);
     }
     return orElse();
   }
@@ -208,10 +222,11 @@ class _$WeatherDatalocationSearched implements WeatherDatalocationSearched {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(WeatherDatalocationSearched value)
-        locationSearched,
-    required TResult Function(WeatherDataDailyLoaded value) dailyLoaded,
-    required TResult Function(WeatherDataHourlyLoaded value) hourlyLoaded,
+    required TResult Function(LocationWeatherSearched value) locationSearched,
+    required TResult Function(LocationWeatherDailyLoaded value) dailyLoaded,
+    required TResult Function(LocationWeatherHourlyLoaded value) hourlyLoaded,
+    required TResult Function(LocationWeatherDayHourChanged value)
+        dayHourChanged,
   }) {
     return locationSearched(this);
   }
@@ -219,9 +234,10 @@ class _$WeatherDatalocationSearched implements WeatherDatalocationSearched {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(WeatherDatalocationSearched value)? locationSearched,
-    TResult? Function(WeatherDataDailyLoaded value)? dailyLoaded,
-    TResult? Function(WeatherDataHourlyLoaded value)? hourlyLoaded,
+    TResult? Function(LocationWeatherSearched value)? locationSearched,
+    TResult? Function(LocationWeatherDailyLoaded value)? dailyLoaded,
+    TResult? Function(LocationWeatherHourlyLoaded value)? hourlyLoaded,
+    TResult? Function(LocationWeatherDayHourChanged value)? dayHourChanged,
   }) {
     return locationSearched?.call(this);
   }
@@ -229,9 +245,10 @@ class _$WeatherDatalocationSearched implements WeatherDatalocationSearched {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(WeatherDatalocationSearched value)? locationSearched,
-    TResult Function(WeatherDataDailyLoaded value)? dailyLoaded,
-    TResult Function(WeatherDataHourlyLoaded value)? hourlyLoaded,
+    TResult Function(LocationWeatherSearched value)? locationSearched,
+    TResult Function(LocationWeatherDailyLoaded value)? dailyLoaded,
+    TResult Function(LocationWeatherHourlyLoaded value)? hourlyLoaded,
+    TResult Function(LocationWeatherDayHourChanged value)? dayHourChanged,
     required TResult orElse(),
   }) {
     if (locationSearched != null) {
@@ -241,31 +258,36 @@ class _$WeatherDatalocationSearched implements WeatherDatalocationSearched {
   }
 }
 
-abstract class WeatherDatalocationSearched implements LocationWeatherEvent {
-  const factory WeatherDatalocationSearched({required final String query}) =
-      _$WeatherDatalocationSearched;
+abstract class LocationWeatherSearched implements LocationWeatherEvent {
+  const factory LocationWeatherSearched(
+      {required final String query,
+      required final Locale? locale}) = _$LocationWeatherSearched;
 
   String get query;
+  Locale? get locale;
   @JsonKey(ignore: true)
-  _$$WeatherDatalocationSearchedCopyWith<_$WeatherDatalocationSearched>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$LocationWeatherSearchedCopyWith<_$LocationWeatherSearched> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$WeatherDataDailyLoadedCopyWith<$Res> {
-  factory _$$WeatherDataDailyLoadedCopyWith(_$WeatherDataDailyLoaded value,
-          $Res Function(_$WeatherDataDailyLoaded) then) =
-      __$$WeatherDataDailyLoadedCopyWithImpl<$Res>;
+abstract class _$$LocationWeatherDailyLoadedCopyWith<$Res> {
+  factory _$$LocationWeatherDailyLoadedCopyWith(
+          _$LocationWeatherDailyLoaded value,
+          $Res Function(_$LocationWeatherDailyLoaded) then) =
+      __$$LocationWeatherDailyLoadedCopyWithImpl<$Res>;
   @useResult
   $Res call({double? latitude, double? longitude, WeatherDataDailyType? type});
 }
 
 /// @nodoc
-class __$$WeatherDataDailyLoadedCopyWithImpl<$Res>
-    extends _$LocationWeatherEventCopyWithImpl<$Res, _$WeatherDataDailyLoaded>
-    implements _$$WeatherDataDailyLoadedCopyWith<$Res> {
-  __$$WeatherDataDailyLoadedCopyWithImpl(_$WeatherDataDailyLoaded _value,
-      $Res Function(_$WeatherDataDailyLoaded) _then)
+class __$$LocationWeatherDailyLoadedCopyWithImpl<$Res>
+    extends _$LocationWeatherEventCopyWithImpl<$Res,
+        _$LocationWeatherDailyLoaded>
+    implements _$$LocationWeatherDailyLoadedCopyWith<$Res> {
+  __$$LocationWeatherDailyLoadedCopyWithImpl(
+      _$LocationWeatherDailyLoaded _value,
+      $Res Function(_$LocationWeatherDailyLoaded) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -275,7 +297,7 @@ class __$$WeatherDataDailyLoadedCopyWithImpl<$Res>
     Object? longitude = freezed,
     Object? type = freezed,
   }) {
-    return _then(_$WeatherDataDailyLoaded(
+    return _then(_$LocationWeatherDailyLoaded(
       latitude: freezed == latitude
           ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
@@ -294,8 +316,9 @@ class __$$WeatherDataDailyLoadedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$WeatherDataDailyLoaded implements WeatherDataDailyLoaded {
-  const _$WeatherDataDailyLoaded({this.latitude, this.longitude, this.type});
+class _$LocationWeatherDailyLoaded implements LocationWeatherDailyLoaded {
+  const _$LocationWeatherDailyLoaded(
+      {this.latitude, this.longitude, this.type});
 
   @override
   final double? latitude;
@@ -313,7 +336,7 @@ class _$WeatherDataDailyLoaded implements WeatherDataDailyLoaded {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$WeatherDataDailyLoaded &&
+            other is _$LocationWeatherDailyLoaded &&
             (identical(other.latitude, latitude) ||
                 other.latitude == latitude) &&
             (identical(other.longitude, longitude) ||
@@ -327,20 +350,21 @@ class _$WeatherDataDailyLoaded implements WeatherDataDailyLoaded {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$WeatherDataDailyLoadedCopyWith<_$WeatherDataDailyLoaded> get copyWith =>
-      __$$WeatherDataDailyLoadedCopyWithImpl<_$WeatherDataDailyLoaded>(
-          this, _$identity);
+  _$$LocationWeatherDailyLoadedCopyWith<_$LocationWeatherDailyLoaded>
+      get copyWith => __$$LocationWeatherDailyLoadedCopyWithImpl<
+          _$LocationWeatherDailyLoaded>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String query) locationSearched,
+    required TResult Function(String query, Locale? locale) locationSearched,
     required TResult Function(
             double? latitude, double? longitude, WeatherDataDailyType? type)
         dailyLoaded,
     required TResult Function(
             double? latitude, double? longitude, WeatherDataHourlyType? type)
         hourlyLoaded,
+    required TResult Function(int dayOfNow, int hourOfDay) dayHourChanged,
   }) {
     return dailyLoaded(latitude, longitude, type);
   }
@@ -348,13 +372,14 @@ class _$WeatherDataDailyLoaded implements WeatherDataDailyLoaded {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String query)? locationSearched,
+    TResult? Function(String query, Locale? locale)? locationSearched,
     TResult? Function(
             double? latitude, double? longitude, WeatherDataDailyType? type)?
         dailyLoaded,
     TResult? Function(
             double? latitude, double? longitude, WeatherDataHourlyType? type)?
         hourlyLoaded,
+    TResult? Function(int dayOfNow, int hourOfDay)? dayHourChanged,
   }) {
     return dailyLoaded?.call(latitude, longitude, type);
   }
@@ -362,13 +387,14 @@ class _$WeatherDataDailyLoaded implements WeatherDataDailyLoaded {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String query)? locationSearched,
+    TResult Function(String query, Locale? locale)? locationSearched,
     TResult Function(
             double? latitude, double? longitude, WeatherDataDailyType? type)?
         dailyLoaded,
     TResult Function(
             double? latitude, double? longitude, WeatherDataHourlyType? type)?
         hourlyLoaded,
+    TResult Function(int dayOfNow, int hourOfDay)? dayHourChanged,
     required TResult orElse(),
   }) {
     if (dailyLoaded != null) {
@@ -380,10 +406,11 @@ class _$WeatherDataDailyLoaded implements WeatherDataDailyLoaded {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(WeatherDatalocationSearched value)
-        locationSearched,
-    required TResult Function(WeatherDataDailyLoaded value) dailyLoaded,
-    required TResult Function(WeatherDataHourlyLoaded value) hourlyLoaded,
+    required TResult Function(LocationWeatherSearched value) locationSearched,
+    required TResult Function(LocationWeatherDailyLoaded value) dailyLoaded,
+    required TResult Function(LocationWeatherHourlyLoaded value) hourlyLoaded,
+    required TResult Function(LocationWeatherDayHourChanged value)
+        dayHourChanged,
   }) {
     return dailyLoaded(this);
   }
@@ -391,9 +418,10 @@ class _$WeatherDataDailyLoaded implements WeatherDataDailyLoaded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(WeatherDatalocationSearched value)? locationSearched,
-    TResult? Function(WeatherDataDailyLoaded value)? dailyLoaded,
-    TResult? Function(WeatherDataHourlyLoaded value)? hourlyLoaded,
+    TResult? Function(LocationWeatherSearched value)? locationSearched,
+    TResult? Function(LocationWeatherDailyLoaded value)? dailyLoaded,
+    TResult? Function(LocationWeatherHourlyLoaded value)? hourlyLoaded,
+    TResult? Function(LocationWeatherDayHourChanged value)? dayHourChanged,
   }) {
     return dailyLoaded?.call(this);
   }
@@ -401,9 +429,10 @@ class _$WeatherDataDailyLoaded implements WeatherDataDailyLoaded {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(WeatherDatalocationSearched value)? locationSearched,
-    TResult Function(WeatherDataDailyLoaded value)? dailyLoaded,
-    TResult Function(WeatherDataHourlyLoaded value)? hourlyLoaded,
+    TResult Function(LocationWeatherSearched value)? locationSearched,
+    TResult Function(LocationWeatherDailyLoaded value)? dailyLoaded,
+    TResult Function(LocationWeatherHourlyLoaded value)? hourlyLoaded,
+    TResult Function(LocationWeatherDayHourChanged value)? dayHourChanged,
     required TResult orElse(),
   }) {
     if (dailyLoaded != null) {
@@ -413,35 +442,38 @@ class _$WeatherDataDailyLoaded implements WeatherDataDailyLoaded {
   }
 }
 
-abstract class WeatherDataDailyLoaded implements LocationWeatherEvent {
-  const factory WeatherDataDailyLoaded(
+abstract class LocationWeatherDailyLoaded implements LocationWeatherEvent {
+  const factory LocationWeatherDailyLoaded(
       {final double? latitude,
       final double? longitude,
-      final WeatherDataDailyType? type}) = _$WeatherDataDailyLoaded;
+      final WeatherDataDailyType? type}) = _$LocationWeatherDailyLoaded;
 
   double? get latitude;
   double? get longitude;
   WeatherDataDailyType? get type;
   @JsonKey(ignore: true)
-  _$$WeatherDataDailyLoadedCopyWith<_$WeatherDataDailyLoaded> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$LocationWeatherDailyLoadedCopyWith<_$LocationWeatherDailyLoaded>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$WeatherDataHourlyLoadedCopyWith<$Res> {
-  factory _$$WeatherDataHourlyLoadedCopyWith(_$WeatherDataHourlyLoaded value,
-          $Res Function(_$WeatherDataHourlyLoaded) then) =
-      __$$WeatherDataHourlyLoadedCopyWithImpl<$Res>;
+abstract class _$$LocationWeatherHourlyLoadedCopyWith<$Res> {
+  factory _$$LocationWeatherHourlyLoadedCopyWith(
+          _$LocationWeatherHourlyLoaded value,
+          $Res Function(_$LocationWeatherHourlyLoaded) then) =
+      __$$LocationWeatherHourlyLoadedCopyWithImpl<$Res>;
   @useResult
   $Res call({double? latitude, double? longitude, WeatherDataHourlyType? type});
 }
 
 /// @nodoc
-class __$$WeatherDataHourlyLoadedCopyWithImpl<$Res>
-    extends _$LocationWeatherEventCopyWithImpl<$Res, _$WeatherDataHourlyLoaded>
-    implements _$$WeatherDataHourlyLoadedCopyWith<$Res> {
-  __$$WeatherDataHourlyLoadedCopyWithImpl(_$WeatherDataHourlyLoaded _value,
-      $Res Function(_$WeatherDataHourlyLoaded) _then)
+class __$$LocationWeatherHourlyLoadedCopyWithImpl<$Res>
+    extends _$LocationWeatherEventCopyWithImpl<$Res,
+        _$LocationWeatherHourlyLoaded>
+    implements _$$LocationWeatherHourlyLoadedCopyWith<$Res> {
+  __$$LocationWeatherHourlyLoadedCopyWithImpl(
+      _$LocationWeatherHourlyLoaded _value,
+      $Res Function(_$LocationWeatherHourlyLoaded) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -451,7 +483,7 @@ class __$$WeatherDataHourlyLoadedCopyWithImpl<$Res>
     Object? longitude = freezed,
     Object? type = freezed,
   }) {
-    return _then(_$WeatherDataHourlyLoaded(
+    return _then(_$LocationWeatherHourlyLoaded(
       latitude: freezed == latitude
           ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
@@ -470,8 +502,9 @@ class __$$WeatherDataHourlyLoadedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$WeatherDataHourlyLoaded implements WeatherDataHourlyLoaded {
-  const _$WeatherDataHourlyLoaded({this.latitude, this.longitude, this.type});
+class _$LocationWeatherHourlyLoaded implements LocationWeatherHourlyLoaded {
+  const _$LocationWeatherHourlyLoaded(
+      {this.latitude, this.longitude, this.type});
 
   @override
   final double? latitude;
@@ -489,7 +522,7 @@ class _$WeatherDataHourlyLoaded implements WeatherDataHourlyLoaded {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$WeatherDataHourlyLoaded &&
+            other is _$LocationWeatherHourlyLoaded &&
             (identical(other.latitude, latitude) ||
                 other.latitude == latitude) &&
             (identical(other.longitude, longitude) ||
@@ -503,20 +536,21 @@ class _$WeatherDataHourlyLoaded implements WeatherDataHourlyLoaded {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$WeatherDataHourlyLoadedCopyWith<_$WeatherDataHourlyLoaded> get copyWith =>
-      __$$WeatherDataHourlyLoadedCopyWithImpl<_$WeatherDataHourlyLoaded>(
-          this, _$identity);
+  _$$LocationWeatherHourlyLoadedCopyWith<_$LocationWeatherHourlyLoaded>
+      get copyWith => __$$LocationWeatherHourlyLoadedCopyWithImpl<
+          _$LocationWeatherHourlyLoaded>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String query) locationSearched,
+    required TResult Function(String query, Locale? locale) locationSearched,
     required TResult Function(
             double? latitude, double? longitude, WeatherDataDailyType? type)
         dailyLoaded,
     required TResult Function(
             double? latitude, double? longitude, WeatherDataHourlyType? type)
         hourlyLoaded,
+    required TResult Function(int dayOfNow, int hourOfDay) dayHourChanged,
   }) {
     return hourlyLoaded(latitude, longitude, type);
   }
@@ -524,13 +558,14 @@ class _$WeatherDataHourlyLoaded implements WeatherDataHourlyLoaded {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String query)? locationSearched,
+    TResult? Function(String query, Locale? locale)? locationSearched,
     TResult? Function(
             double? latitude, double? longitude, WeatherDataDailyType? type)?
         dailyLoaded,
     TResult? Function(
             double? latitude, double? longitude, WeatherDataHourlyType? type)?
         hourlyLoaded,
+    TResult? Function(int dayOfNow, int hourOfDay)? dayHourChanged,
   }) {
     return hourlyLoaded?.call(latitude, longitude, type);
   }
@@ -538,13 +573,14 @@ class _$WeatherDataHourlyLoaded implements WeatherDataHourlyLoaded {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String query)? locationSearched,
+    TResult Function(String query, Locale? locale)? locationSearched,
     TResult Function(
             double? latitude, double? longitude, WeatherDataDailyType? type)?
         dailyLoaded,
     TResult Function(
             double? latitude, double? longitude, WeatherDataHourlyType? type)?
         hourlyLoaded,
+    TResult Function(int dayOfNow, int hourOfDay)? dayHourChanged,
     required TResult orElse(),
   }) {
     if (hourlyLoaded != null) {
@@ -556,10 +592,11 @@ class _$WeatherDataHourlyLoaded implements WeatherDataHourlyLoaded {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(WeatherDatalocationSearched value)
-        locationSearched,
-    required TResult Function(WeatherDataDailyLoaded value) dailyLoaded,
-    required TResult Function(WeatherDataHourlyLoaded value) hourlyLoaded,
+    required TResult Function(LocationWeatherSearched value) locationSearched,
+    required TResult Function(LocationWeatherDailyLoaded value) dailyLoaded,
+    required TResult Function(LocationWeatherHourlyLoaded value) hourlyLoaded,
+    required TResult Function(LocationWeatherDayHourChanged value)
+        dayHourChanged,
   }) {
     return hourlyLoaded(this);
   }
@@ -567,9 +604,10 @@ class _$WeatherDataHourlyLoaded implements WeatherDataHourlyLoaded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(WeatherDatalocationSearched value)? locationSearched,
-    TResult? Function(WeatherDataDailyLoaded value)? dailyLoaded,
-    TResult? Function(WeatherDataHourlyLoaded value)? hourlyLoaded,
+    TResult? Function(LocationWeatherSearched value)? locationSearched,
+    TResult? Function(LocationWeatherDailyLoaded value)? dailyLoaded,
+    TResult? Function(LocationWeatherHourlyLoaded value)? hourlyLoaded,
+    TResult? Function(LocationWeatherDayHourChanged value)? dayHourChanged,
   }) {
     return hourlyLoaded?.call(this);
   }
@@ -577,9 +615,10 @@ class _$WeatherDataHourlyLoaded implements WeatherDataHourlyLoaded {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(WeatherDatalocationSearched value)? locationSearched,
-    TResult Function(WeatherDataDailyLoaded value)? dailyLoaded,
-    TResult Function(WeatherDataHourlyLoaded value)? hourlyLoaded,
+    TResult Function(LocationWeatherSearched value)? locationSearched,
+    TResult Function(LocationWeatherDailyLoaded value)? dailyLoaded,
+    TResult Function(LocationWeatherHourlyLoaded value)? hourlyLoaded,
+    TResult Function(LocationWeatherDayHourChanged value)? dayHourChanged,
     required TResult orElse(),
   }) {
     if (hourlyLoaded != null) {
@@ -589,28 +628,207 @@ class _$WeatherDataHourlyLoaded implements WeatherDataHourlyLoaded {
   }
 }
 
-abstract class WeatherDataHourlyLoaded implements LocationWeatherEvent {
-  const factory WeatherDataHourlyLoaded(
+abstract class LocationWeatherHourlyLoaded implements LocationWeatherEvent {
+  const factory LocationWeatherHourlyLoaded(
       {final double? latitude,
       final double? longitude,
-      final WeatherDataHourlyType? type}) = _$WeatherDataHourlyLoaded;
+      final WeatherDataHourlyType? type}) = _$LocationWeatherHourlyLoaded;
 
   double? get latitude;
   double? get longitude;
   WeatherDataHourlyType? get type;
   @JsonKey(ignore: true)
-  _$$WeatherDataHourlyLoadedCopyWith<_$WeatherDataHourlyLoaded> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$LocationWeatherHourlyLoadedCopyWith<_$LocationWeatherHourlyLoaded>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LocationWeatherDayHourChangedCopyWith<$Res> {
+  factory _$$LocationWeatherDayHourChangedCopyWith(
+          _$LocationWeatherDayHourChanged value,
+          $Res Function(_$LocationWeatherDayHourChanged) then) =
+      __$$LocationWeatherDayHourChangedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int dayOfNow, int hourOfDay});
+}
+
+/// @nodoc
+class __$$LocationWeatherDayHourChangedCopyWithImpl<$Res>
+    extends _$LocationWeatherEventCopyWithImpl<$Res,
+        _$LocationWeatherDayHourChanged>
+    implements _$$LocationWeatherDayHourChangedCopyWith<$Res> {
+  __$$LocationWeatherDayHourChangedCopyWithImpl(
+      _$LocationWeatherDayHourChanged _value,
+      $Res Function(_$LocationWeatherDayHourChanged) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? dayOfNow = null,
+    Object? hourOfDay = null,
+  }) {
+    return _then(_$LocationWeatherDayHourChanged(
+      dayOfNow: null == dayOfNow
+          ? _value.dayOfNow
+          : dayOfNow // ignore: cast_nullable_to_non_nullable
+              as int,
+      hourOfDay: null == hourOfDay
+          ? _value.hourOfDay
+          : hourOfDay // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LocationWeatherDayHourChanged implements LocationWeatherDayHourChanged {
+  const _$LocationWeatherDayHourChanged(
+      {required this.dayOfNow, required this.hourOfDay});
+
+  @override
+  final int dayOfNow;
+  @override
+  final int hourOfDay;
+
+  @override
+  String toString() {
+    return 'LocationWeatherEvent.dayHourChanged(dayOfNow: $dayOfNow, hourOfDay: $hourOfDay)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LocationWeatherDayHourChanged &&
+            (identical(other.dayOfNow, dayOfNow) ||
+                other.dayOfNow == dayOfNow) &&
+            (identical(other.hourOfDay, hourOfDay) ||
+                other.hourOfDay == hourOfDay));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, dayOfNow, hourOfDay);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LocationWeatherDayHourChangedCopyWith<_$LocationWeatherDayHourChanged>
+      get copyWith => __$$LocationWeatherDayHourChangedCopyWithImpl<
+          _$LocationWeatherDayHourChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String query, Locale? locale) locationSearched,
+    required TResult Function(
+            double? latitude, double? longitude, WeatherDataDailyType? type)
+        dailyLoaded,
+    required TResult Function(
+            double? latitude, double? longitude, WeatherDataHourlyType? type)
+        hourlyLoaded,
+    required TResult Function(int dayOfNow, int hourOfDay) dayHourChanged,
+  }) {
+    return dayHourChanged(dayOfNow, hourOfDay);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String query, Locale? locale)? locationSearched,
+    TResult? Function(
+            double? latitude, double? longitude, WeatherDataDailyType? type)?
+        dailyLoaded,
+    TResult? Function(
+            double? latitude, double? longitude, WeatherDataHourlyType? type)?
+        hourlyLoaded,
+    TResult? Function(int dayOfNow, int hourOfDay)? dayHourChanged,
+  }) {
+    return dayHourChanged?.call(dayOfNow, hourOfDay);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String query, Locale? locale)? locationSearched,
+    TResult Function(
+            double? latitude, double? longitude, WeatherDataDailyType? type)?
+        dailyLoaded,
+    TResult Function(
+            double? latitude, double? longitude, WeatherDataHourlyType? type)?
+        hourlyLoaded,
+    TResult Function(int dayOfNow, int hourOfDay)? dayHourChanged,
+    required TResult orElse(),
+  }) {
+    if (dayHourChanged != null) {
+      return dayHourChanged(dayOfNow, hourOfDay);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LocationWeatherSearched value) locationSearched,
+    required TResult Function(LocationWeatherDailyLoaded value) dailyLoaded,
+    required TResult Function(LocationWeatherHourlyLoaded value) hourlyLoaded,
+    required TResult Function(LocationWeatherDayHourChanged value)
+        dayHourChanged,
+  }) {
+    return dayHourChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LocationWeatherSearched value)? locationSearched,
+    TResult? Function(LocationWeatherDailyLoaded value)? dailyLoaded,
+    TResult? Function(LocationWeatherHourlyLoaded value)? hourlyLoaded,
+    TResult? Function(LocationWeatherDayHourChanged value)? dayHourChanged,
+  }) {
+    return dayHourChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LocationWeatherSearched value)? locationSearched,
+    TResult Function(LocationWeatherDailyLoaded value)? dailyLoaded,
+    TResult Function(LocationWeatherHourlyLoaded value)? hourlyLoaded,
+    TResult Function(LocationWeatherDayHourChanged value)? dayHourChanged,
+    required TResult orElse(),
+  }) {
+    if (dayHourChanged != null) {
+      return dayHourChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LocationWeatherDayHourChanged implements LocationWeatherEvent {
+  const factory LocationWeatherDayHourChanged(
+      {required final int dayOfNow,
+      required final int hourOfDay}) = _$LocationWeatherDayHourChanged;
+
+  int get dayOfNow;
+  int get hourOfDay;
+  @JsonKey(ignore: true)
+  _$$LocationWeatherDayHourChangedCopyWith<_$LocationWeatherDayHourChanged>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 mixin _$LocationWeatherState {
   WeatherDailyModel? get weatherDaily => throw _privateConstructorUsedError;
-  WeatherHourlyModel? get weatherHourly => throw _privateConstructorUsedError;
+  WeatherDataHourlyModel? get weatherDataHourly =>
+      throw _privateConstructorUsedError;
   BlocStateManageUIModel get manageUI => throw _privateConstructorUsedError;
   WeatherDataHourlyType get hourlyType => throw _privateConstructorUsedError;
   WeatherDataDailyType get dailyType => throw _privateConstructorUsedError;
   List<CityModel> get cities => throw _privateConstructorUsedError;
+  int? get dayOfnow => throw _privateConstructorUsedError;
+  int? get hourOfDay => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $LocationWeatherStateCopyWith<LocationWeatherState> get copyWith =>
@@ -625,14 +843,16 @@ abstract class $LocationWeatherStateCopyWith<$Res> {
   @useResult
   $Res call(
       {WeatherDailyModel? weatherDaily,
-      WeatherHourlyModel? weatherHourly,
+      WeatherDataHourlyModel? weatherDataHourly,
       BlocStateManageUIModel manageUI,
       WeatherDataHourlyType hourlyType,
       WeatherDataDailyType dailyType,
-      List<CityModel> cities});
+      List<CityModel> cities,
+      int? dayOfnow,
+      int? hourOfDay});
 
   $WeatherDailyModelCopyWith<$Res>? get weatherDaily;
-  $WeatherHourlyModelCopyWith<$Res>? get weatherHourly;
+  $WeatherDataHourlyModelCopyWith<$Res>? get weatherDataHourly;
   $BlocStateManageUIModelCopyWith<$Res> get manageUI;
 }
 
@@ -651,21 +871,23 @@ class _$LocationWeatherStateCopyWithImpl<$Res,
   @override
   $Res call({
     Object? weatherDaily = freezed,
-    Object? weatherHourly = freezed,
+    Object? weatherDataHourly = freezed,
     Object? manageUI = null,
     Object? hourlyType = null,
     Object? dailyType = null,
     Object? cities = null,
+    Object? dayOfnow = freezed,
+    Object? hourOfDay = freezed,
   }) {
     return _then(_value.copyWith(
       weatherDaily: freezed == weatherDaily
           ? _value.weatherDaily
           : weatherDaily // ignore: cast_nullable_to_non_nullable
               as WeatherDailyModel?,
-      weatherHourly: freezed == weatherHourly
-          ? _value.weatherHourly
-          : weatherHourly // ignore: cast_nullable_to_non_nullable
-              as WeatherHourlyModel?,
+      weatherDataHourly: freezed == weatherDataHourly
+          ? _value.weatherDataHourly
+          : weatherDataHourly // ignore: cast_nullable_to_non_nullable
+              as WeatherDataHourlyModel?,
       manageUI: null == manageUI
           ? _value.manageUI
           : manageUI // ignore: cast_nullable_to_non_nullable
@@ -682,6 +904,14 @@ class _$LocationWeatherStateCopyWithImpl<$Res,
           ? _value.cities
           : cities // ignore: cast_nullable_to_non_nullable
               as List<CityModel>,
+      dayOfnow: freezed == dayOfnow
+          ? _value.dayOfnow
+          : dayOfnow // ignore: cast_nullable_to_non_nullable
+              as int?,
+      hourOfDay: freezed == hourOfDay
+          ? _value.hourOfDay
+          : hourOfDay // ignore: cast_nullable_to_non_nullable
+              as int?,
     ) as $Val);
   }
 
@@ -699,13 +929,14 @@ class _$LocationWeatherStateCopyWithImpl<$Res,
 
   @override
   @pragma('vm:prefer-inline')
-  $WeatherHourlyModelCopyWith<$Res>? get weatherHourly {
-    if (_value.weatherHourly == null) {
+  $WeatherDataHourlyModelCopyWith<$Res>? get weatherDataHourly {
+    if (_value.weatherDataHourly == null) {
       return null;
     }
 
-    return $WeatherHourlyModelCopyWith<$Res>(_value.weatherHourly!, (value) {
-      return _then(_value.copyWith(weatherHourly: value) as $Val);
+    return $WeatherDataHourlyModelCopyWith<$Res>(_value.weatherDataHourly!,
+        (value) {
+      return _then(_value.copyWith(weatherDataHourly: value) as $Val);
     });
   }
 
@@ -728,16 +959,18 @@ abstract class _$$_LocationWeatherStateCopyWith<$Res>
   @useResult
   $Res call(
       {WeatherDailyModel? weatherDaily,
-      WeatherHourlyModel? weatherHourly,
+      WeatherDataHourlyModel? weatherDataHourly,
       BlocStateManageUIModel manageUI,
       WeatherDataHourlyType hourlyType,
       WeatherDataDailyType dailyType,
-      List<CityModel> cities});
+      List<CityModel> cities,
+      int? dayOfnow,
+      int? hourOfDay});
 
   @override
   $WeatherDailyModelCopyWith<$Res>? get weatherDaily;
   @override
-  $WeatherHourlyModelCopyWith<$Res>? get weatherHourly;
+  $WeatherDataHourlyModelCopyWith<$Res>? get weatherDataHourly;
   @override
   $BlocStateManageUIModelCopyWith<$Res> get manageUI;
 }
@@ -754,21 +987,23 @@ class __$$_LocationWeatherStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? weatherDaily = freezed,
-    Object? weatherHourly = freezed,
+    Object? weatherDataHourly = freezed,
     Object? manageUI = null,
     Object? hourlyType = null,
     Object? dailyType = null,
     Object? cities = null,
+    Object? dayOfnow = freezed,
+    Object? hourOfDay = freezed,
   }) {
     return _then(_$_LocationWeatherState(
       weatherDaily: freezed == weatherDaily
           ? _value.weatherDaily
           : weatherDaily // ignore: cast_nullable_to_non_nullable
               as WeatherDailyModel?,
-      weatherHourly: freezed == weatherHourly
-          ? _value.weatherHourly
-          : weatherHourly // ignore: cast_nullable_to_non_nullable
-              as WeatherHourlyModel?,
+      weatherDataHourly: freezed == weatherDataHourly
+          ? _value.weatherDataHourly
+          : weatherDataHourly // ignore: cast_nullable_to_non_nullable
+              as WeatherDataHourlyModel?,
       manageUI: null == manageUI
           ? _value.manageUI
           : manageUI // ignore: cast_nullable_to_non_nullable
@@ -785,6 +1020,14 @@ class __$$_LocationWeatherStateCopyWithImpl<$Res>
           ? _value._cities
           : cities // ignore: cast_nullable_to_non_nullable
               as List<CityModel>,
+      dayOfnow: freezed == dayOfnow
+          ? _value.dayOfnow
+          : dayOfnow // ignore: cast_nullable_to_non_nullable
+              as int?,
+      hourOfDay: freezed == hourOfDay
+          ? _value.hourOfDay
+          : hourOfDay // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -794,17 +1037,19 @@ class __$$_LocationWeatherStateCopyWithImpl<$Res>
 class _$_LocationWeatherState implements _LocationWeatherState {
   _$_LocationWeatherState(
       {required this.weatherDaily,
-      required this.weatherHourly,
+      required this.weatherDataHourly,
       required this.manageUI,
       required this.hourlyType,
       required this.dailyType,
-      required final List<CityModel> cities})
+      required final List<CityModel> cities,
+      this.dayOfnow,
+      this.hourOfDay})
       : _cities = cities;
 
   @override
   final WeatherDailyModel? weatherDaily;
   @override
-  final WeatherHourlyModel? weatherHourly;
+  final WeatherDataHourlyModel? weatherDataHourly;
   @override
   final BlocStateManageUIModel manageUI;
   @override
@@ -820,8 +1065,13 @@ class _$_LocationWeatherState implements _LocationWeatherState {
   }
 
   @override
+  final int? dayOfnow;
+  @override
+  final int? hourOfDay;
+
+  @override
   String toString() {
-    return 'LocationWeatherState(weatherDaily: $weatherDaily, weatherHourly: $weatherHourly, manageUI: $manageUI, hourlyType: $hourlyType, dailyType: $dailyType, cities: $cities)';
+    return 'LocationWeatherState(weatherDaily: $weatherDaily, weatherDataHourly: $weatherDataHourly, manageUI: $manageUI, hourlyType: $hourlyType, dailyType: $dailyType, cities: $cities, dayOfnow: $dayOfnow, hourOfDay: $hourOfDay)';
   }
 
   @override
@@ -831,26 +1081,32 @@ class _$_LocationWeatherState implements _LocationWeatherState {
             other is _$_LocationWeatherState &&
             (identical(other.weatherDaily, weatherDaily) ||
                 other.weatherDaily == weatherDaily) &&
-            (identical(other.weatherHourly, weatherHourly) ||
-                other.weatherHourly == weatherHourly) &&
+            (identical(other.weatherDataHourly, weatherDataHourly) ||
+                other.weatherDataHourly == weatherDataHourly) &&
             (identical(other.manageUI, manageUI) ||
                 other.manageUI == manageUI) &&
             (identical(other.hourlyType, hourlyType) ||
                 other.hourlyType == hourlyType) &&
             (identical(other.dailyType, dailyType) ||
                 other.dailyType == dailyType) &&
-            const DeepCollectionEquality().equals(other._cities, _cities));
+            const DeepCollectionEquality().equals(other._cities, _cities) &&
+            (identical(other.dayOfnow, dayOfnow) ||
+                other.dayOfnow == dayOfnow) &&
+            (identical(other.hourOfDay, hourOfDay) ||
+                other.hourOfDay == hourOfDay));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       weatherDaily,
-      weatherHourly,
+      weatherDataHourly,
       manageUI,
       hourlyType,
       dailyType,
-      const DeepCollectionEquality().hash(_cities));
+      const DeepCollectionEquality().hash(_cities),
+      dayOfnow,
+      hourOfDay);
 
   @JsonKey(ignore: true)
   @override
@@ -863,16 +1119,18 @@ class _$_LocationWeatherState implements _LocationWeatherState {
 abstract class _LocationWeatherState implements LocationWeatherState {
   factory _LocationWeatherState(
       {required final WeatherDailyModel? weatherDaily,
-      required final WeatherHourlyModel? weatherHourly,
+      required final WeatherDataHourlyModel? weatherDataHourly,
       required final BlocStateManageUIModel manageUI,
       required final WeatherDataHourlyType hourlyType,
       required final WeatherDataDailyType dailyType,
-      required final List<CityModel> cities}) = _$_LocationWeatherState;
+      required final List<CityModel> cities,
+      final int? dayOfnow,
+      final int? hourOfDay}) = _$_LocationWeatherState;
 
   @override
   WeatherDailyModel? get weatherDaily;
   @override
-  WeatherHourlyModel? get weatherHourly;
+  WeatherDataHourlyModel? get weatherDataHourly;
   @override
   BlocStateManageUIModel get manageUI;
   @override
@@ -881,6 +1139,10 @@ abstract class _LocationWeatherState implements LocationWeatherState {
   WeatherDataDailyType get dailyType;
   @override
   List<CityModel> get cities;
+  @override
+  int? get dayOfnow;
+  @override
+  int? get hourOfDay;
   @override
   @JsonKey(ignore: true)
   _$$_LocationWeatherStateCopyWith<_$_LocationWeatherState> get copyWith =>

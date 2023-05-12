@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 
 import '../../../models/models.dart';
@@ -15,4 +16,6 @@ abstract class WeatherApiProvider {
       required WeatherDataDailyType type});
 
   Future<Position> getCurrentPosition();
+
+  Future<List<CityModel>> searchLocation(String query, Locale? locale);
 }
