@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import '../../../../utils/utils.dart';
+import '../../utils/utils.dart';
 
+/// weather now widget by the hour and day
 class WeatherNowWidget extends StatelessWidget {
   const WeatherNowWidget(
       {super.key,

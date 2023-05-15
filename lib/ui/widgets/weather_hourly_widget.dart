@@ -4,6 +4,7 @@ import 'package:intl/intl.dart';
 import '../../blocs/blocs.dart';
 import '../../utils/utils.dart';
 
+/// weather by hour widget
 class WeatherHourlyWidget extends StatelessWidget {
   const WeatherHourlyWidget({
     super.key,

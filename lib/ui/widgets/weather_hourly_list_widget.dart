@@ -3,6 +3,7 @@ import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import '../../configs/themes/themes.dart';
 import 'widgets.dart';
 
+/// list of hourly widget with weather data
 class WeatherHourlyListWidget extends StatefulWidget {
   final List<String>? times;
   final List<int> weathercode;

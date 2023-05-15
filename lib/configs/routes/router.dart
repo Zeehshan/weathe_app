@@ -42,6 +42,7 @@ final GoRouter router = GoRouter(routes: <RouteBase>[
   )
 ]);
 
+/// used for custom animtion for the go routes
 CustomTransitionPage buildPageWithDefaultTransition<T>({
   required BuildContext context,
   required GoRouterState state,

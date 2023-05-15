@@ -9,14 +9,22 @@ part 'location_weather_event.dart';
 part 'location_weather_state.dart';
 part 'location_weather_bloc.freezed.dart';
 
+/// used to serch location and see the location wise weather
 class LocationWeatherBloc
     extends Bloc<LocationWeatherEvent, LocationWeatherState> {
   final WeatherRepository weatherRepository;
   LocationWeatherBloc({required this.weatherRepository})
       : super(LocationWeatherState.initial()) {
+    /// search for location
     on<LocationWeatherSearched>(_onLocationWeatherSearched);
+
+    /// weather of the day
     on<LocationWeatherDailyLoaded>(_onLocationWeatherDailyLoaded);
+
+    /// weather hour of the day
     on<LocationWeatherHourlyLoaded>(_onLocationWeatherHourlyLoaded);
+
+    /// here we show the weather by hour of day
     on<LocationWeatherDayHourChanged>(_onLocationWeatherDayHourChanged);
   }
 

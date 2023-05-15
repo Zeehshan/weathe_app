@@ -2,18 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../blocs/blocs.dart';
+import '../../../utils/enums.dart';
 import '../../widgets/widgets.dart';
-import 'widgets/widgets.dart';
 
 class CurrentDayWeatherScreen extends StatelessWidget {
   const CurrentDayWeatherScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final setting = context.watch<SettingBloc>().state;
+    // final setting = context.watch<SettingBloc>().state;
     return Scaffold(
       body: BlocBuilder<WeatherCurrentDayBloc, WeatherCurrentDayState>(
         builder: (context, state) {
+          if (state.manageUI.uiAction.type ==
+              BlocStateUIActionType.inProgress) {
+            return const LoadingWidget();
+          }
           final weatherDaily = state.weatherDaily;
           final weatherHourly = state.weatherDataHourly;
           if (weatherDaily == null || weatherHourly == null) {

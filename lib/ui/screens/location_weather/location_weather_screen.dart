@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../blocs/blocs.dart';
+import '../../../utils/utils.dart';
 import '../../widgets/widgets.dart';
 import 'widgets/widgets.dart';
 
@@ -13,6 +14,10 @@ class LocationWeatherScreen extends StatelessWidget {
     return Scaffold(
       body: BlocBuilder<LocationWeatherBloc, LocationWeatherState>(
         builder: (context, state) {
+          if (state.manageUI.uiAction.type ==
+              BlocStateUIActionType.inProgress) {
+            return const LoadingWidget();
+          }
           final weatherDaily = state.weatherDaily;
           final weatherHourly = state.weatherDataHourly;
 

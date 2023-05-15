@@ -11,14 +11,22 @@ part 'weather_current_day_event.dart';
 part 'weather_current_day_state.dart';
 part 'weather_current_day_bloc.freezed.dart';
 
+/// used for the current location weather of current day.
 class WeatherCurrentDayBloc
     extends Bloc<WeatherCurrentDayEvent, WeatherCurrentDayState> {
   final WeatherRepository weatherRepository;
   WeatherCurrentDayBloc({required this.weatherRepository})
       : super(WeatherCurrentDayState.initial()) {
+    /// when we opend app current location of device will load
     on<WeatherCurrentDayLocationLoaded>(_onWeatherCurrentDayLocationLoaded);
+
+    /// weather of the day
     on<WeatherCurrentDayLoaded>(_onWeatherCurrentDayLoaded);
+
+    /// weather hour of the day
     on<WeatherCurrentDayHourlyLoaded>(_onWeatherCurrentDayHourlyLoaded);
+
+    /// here we show the weather by hour of day
     on<WeatherCurrentDayHourChaged>(_onWeatherCurrentDayHourChaged);
   }
 
